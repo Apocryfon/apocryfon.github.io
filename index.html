@@ -1,7 +1,76 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Illya Moskalenko - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="flex flex-col items-center w-full px-4 py-10 text-center">
+    <!-- Page Title -->
+    <header class="mb-10 w-full max-w-5xl">
+      <h1 class="text-4xl font-bold">Illya Moskalenko</h1>
+      <p class="text-lg text-gray-400">Computer Science and Gamedev Student</p>
+    </header>
+
+    <!-- About Me Section -->
+    <section class="mb-12 w-full max-w-5xl">
+      <h2 class="text-2xl font-semibold mb-4">🧠 About Me</h2>
+      <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur sapien ut pulvinar fringilla. Nulla varius metus neque, sit amet feugiat turpis elementum eu. Ut molestie ante lectus, eu lobortis augue scelerisque eu. Maecenas vel metus auctor lectus aliquet tincidunt eu in mi. Pellentesque faucibus auctor nulla non interdum. Morbi quis venenatis tortor. Suspendisse ac facilisis sem. Sed consectetur dui sed nisi egestas, eget lobortis sapien tempus.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="mb-12 w-full max-w-5xl">
+      <h2 class="text-2xl font-semibold mb-6">🎮 Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Game 1 -->
+        <div>
+          <h3 class="text-xl font-bold">Project 1</h3>
+          <p class="text-gray-300 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur sapien ut pulvinar fringilla. Nulla varius metus neque, sit amet feugiat turpis elementum eu. Ut molestie ante lectus, eu lobortis augue scelerisque eu. Maecenas vel metus auctor lectus aliquet tincidunt eu in mi. Pellentesque faucibus auctor nulla non interdum.</p>
+          <video class="w-full rounded-lg shadow-lg mb-4" controls>
+            <source src="videos/echoverse.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Game 2 -->
+        <div>
+          <h3 class="text-xl font-bold">Project 2</h3>
+          <p class="text-gray-300 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur sapien ut pulvinar fringilla. Nulla varius metus neque, sit amet feugiat turpis elementum eu. Ut molestie ante lectus, eu lobortis augue scelerisque eu. Maecenas vel metus auctor lectus aliquet tincidunt eu in mi. Pellentesque faucibus auctor nulla non interdum.</p>
+          <iframe class="w-full h-64 rounded-lg shadow-lg" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Game 3 -->
+        <div>
+          <h3 class="text-xl font-bold">Project 3</h3>
+          <p class="text-gray-300 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur sapien ut pulvinar fringilla. Nulla varius metus neque, sit amet feugiat turpis elementum eu. Ut molestie ante lectus, eu lobortis augue scelerisque eu. Maecenas vel metus auctor lectus aliquet tincidunt eu in mi. Pellentesque faucibus auctor nulla non interdum.</p>
+          <img src="gifs/pixelquest.gif" alt="Pixel Quest demo" class="w-full rounded-lg shadow-lg" />
+        </div>
+
+        <!-- Game 4 -->
+        <div>
+          <h3 class="text-xl font-bold">Project 4</h3>
+          <p class="text-gray-300 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur sapien ut pulvinar fringilla. Nulla varius metus neque, sit amet feugiat turpis elementum eu. Ut molestie ante lectus, eu lobortis augue scelerisque eu. Maecenas vel metus auctor lectus aliquet tincidunt eu in mi. Pellentesque faucibus auctor nulla non interdum.</p>
+          <video class="w-full rounded-lg shadow-lg mb-4" controls>
+            <source src="videos/voiddrift.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="mb-12 w-full max-w-5xl">
+      <h2 class="text-2xl font-semibold mb-4">📬 Contact</h2>
+      <p class="text-gray-300">Email: <a href="mailto:alex.rivera@gamedevmail.com" class="text-blue-400" target="_blank">illya.moskalenko@gmail.com</a></p>
+      <p class="text-gray-300">GitHub: <a href="https://github.com/s28600" class="text-blue-400" target="_blank">github.com/s28600</a></p>
+      <p class="text-gray-300">LinkedIn: <a href="https://www.linkedin.com/in/illya-moskalenko-226699297" class="text-blue-400" target="_blank">linkedin.com/in/illya-moskalenko</a></p>
+    </section>
+  </div>
+
+  <footer class="text-center text-gray-500 py-6 text-sm">
+    © 2025 Illya Moskalenko. All rights reserved.
+  </footer>
 </body>
 </html>
