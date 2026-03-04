@@ -5,86 +5,210 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Illya Moskalenko - Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .project-grid { grid-template-columns: 1fr; }
+    }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card .card-text {
+      flex: 1;
+    }
+    .responsibilities-wrapper {
+      position: relative;
+    }
+    .responsibilities-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 0.5rem);
+      z-index: 10;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .responsibilities-content.open {
+      max-height: 600px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .toggle-btn svg { transition: transform 0.3s ease; }
+    .toggle-btn.open svg { transform: rotate(180deg); }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <div class="flex flex-col items-center w-full px-4 py-10 text-center">
-    <!-- Page Title -->
-    <header class="mb-10 w-full max-w-5xl">
-      <h1 class="text-4xl font-bold">Illya Moskalenko</h1>
-      <p class="text-lg text-gray-400">Computer Science and Gamedev Student</p>
-    </header>
+<div class="flex flex-col items-center w-full px-4 py-10 text-center">
 
-    <!-- About Me Section -->
-    <section class="mb-12 w-full max-w-5xl">
-      <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-      <p class="text-gray-300">Hi, my name is Illya Moskalenko and I'm a 3rd year computer science and gamedev student at Polish-Japanese Academy of Information Technology.
-        Welcome to my portfolio! This page showcases the game projects I’ve worked on, as well as those I'm currently developing.
-        I am passionate about programming, especially gamedev, and that is why I love exploring different aspects of it, whether it's gameplay mechanics, visuals, or systems programming.
-        So far, all my projects have been built in Unity, but I'm interested in exploring Unreal Engine as well.</p>
-    </section>
+  <header class="mb-10 w-full max-w-5xl">
+    <h1 class="text-4xl font-bold">Illya Moskalenko</h1>
+    <p class="text-lg text-gray-400">Computer Science and Gamedev Graduate</p>
+  </header>
 
-    <!-- Projects Section -->
-    <section class="mb-12 w-full max-w-7xl">
-      <h2 class="text-2xl font-semibold mb-6">🎮 Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Game 1 -->
-        <div>
-          <h3 class="text-xl font-bold">3D Diploma game in Unity (WIP)</h3>
-          <p class="text-gray-300 mb-2">For my diploma project, I am currently working in a team of 4 on a low-poly 3D game in Unity.
-            We use Agile methodology, planning our tasks in one-week sprints in Jira and presenting our weekly progress during classes.
+  <section class="mb-12 w-full max-w-5xl">
+    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+    <p class="text-gray-300">Hi, my name is Illya Moskalenko and I'm a recent computer science graduate with specialization in gamedev at Polish-Japanese Academy of Information Technology.
+      Welcome to my portfolio! This page showcases the game projects I've worked on.
+      I am passionate about programming, especially gamedev, and that is why I love exploring different aspects of it, whether it's gameplay mechanics, visuals, or systems programming.
+      So far, all my projects have been built in Unity, but I'm interested in exploring Unreal Engine as well.</p>
+  </section>
+
+  <section class="mb-12 w-full max-w-7xl">
+    <h2 class="text-2xl font-semibold mb-6">🎮 Projects</h2>
+    <div class="project-grid">
+
+      <!-- Game 1 -->
+      <div class="project-card">
+        <div class="card-text text-center mb-3">
+          <h3 class="text-xl font-bold mb-2">Desolate Place</h3>
+          <p class="text-gray-300">Desolate Place is my diploma project, which I have worked on in a team of four people, a low-poly 3D game in Unity.
+            We used Agile methodology, planning our tasks in one-week sprints in Jira and presenting our weekly progress during classes.
             The game combines sci-fi puzzle gameplay with elements of atmospheric horror.</p>
-          <iframe class="w-full h-96 rounded-lg shadow-lg" src="https://www.youtube.com/embed/lkpKrzjqgGY" frameborder="0" allowfullscreen></iframe>
         </div>
+        <iframe class="w-full h-96 rounded-lg shadow-lg mb-3" src="https://www.youtube.com/embed/OLrwPPt9RfA" frameborder="0" allowfullscreen></iframe>
+        <div class="responsibilities-wrapper">
+          <button class="toggle-btn w-full flex items-center justify-between px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors duration-200" onclick="toggleResponsibilities(this)">
+            <span>My Responsibilities</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="responsibilities-content text-left px-4 py-3 bg-gray-800 rounded-lg text-gray-300 text-sm">
+            <ul class="list-disc list-inside space-y-1">
+              <li>Game progression design</li>
+              <li>Player experience design (game flow)</li>
+              <li>Level design</li>
+              <li>Puzzles design and implementation</li>
+              <li>User interface (UI) and heads-up display (HUD) design and implementation</li>
+              <li>Creating shaders for UI and HUD elements</li>
+              <li>3D modeling of some elements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-        <!-- Game 2 -->
-        <div>
-          <h3 class="text-xl font-bold">Law of Attraction</h3>
-          <p class="text-gray-300 mb-2">Law of Attraction is a 2D platformer game created as part of a GameJam event at PJATK University.
+      <!-- Game 2 -->
+      <div class="project-card">
+        <div class="card-text text-center mb-3">
+          <h3 class="text-xl font-bold mb-2">Law of Attraction</h3>
+          <p class="text-gray-300">Law of Attraction is a 2D platformer game created as part of a GameJam event at PJATK University.
             The theme was "Up Up and Away." Our team of 4 worked under a 20-hour time constraint and took 3rd place.
             In the game, players must go up using a gun that shoots two types of projectiles, which carry different gravitational forces: attraction and repulsion.
             Players navigate by dodging turrets that fire at them while using these gravitational forces to climb in ways that would otherwise be impossible.</p>
-          <iframe class="w-full h-96 rounded-lg shadow-lg" src="https://www.youtube.com/embed/N27ht0JuibM" frameborder="0" allowfullscreen></iframe>
         </div>
-
-        <!-- Game 3 -->
-        <div>
-          <h3 class="text-xl font-bold">3D Tower Defense in Unity (WIP)</h3>
-          <p class="text-gray-300 mb-2">This is the second project I’m currently working on, with the same team of four as in my diploma project.
-            The game is a simple tower defense game, and the focus of the project is to learn and apply common design and architectural patterns.</p>
-          <iframe class="w-full h-96 rounded-lg shadow-lg" src="https://www.youtube.com/embed/hF-7jBhkrtc" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <!-- Game 4 -->
-        <div>
-          <h3 class="text-xl font-bold">Treasure Hunters</h3>
-          <p class="text-gray-300 mb-2">This was my first project in Unity, with the main goal of learning the engine and gaining experience working on a team project.
-            The team consisted of 4 people, and we worked on the project for 6 weeks.
-            We used free assets from
-            <a href="https://pixelfrog-assets.itch.io/treasure-hunters" target="_blank" class="text-blue-400 underline"> PixelFrog's Treasure Hunters pack </a>
-            and implemented all game logic according to a Game Design Document (GDD) template.</p>
-          <iframe class="w-full h-96 rounded-lg shadow-lg" src="https://www.youtube.com/embed/4TAIjSbqP1U" frameborder="0" allowfullscreen></iframe>
+        <iframe class="w-full h-96 rounded-lg shadow-lg mb-3" src="https://www.youtube.com/embed/N27ht0JuibM" frameborder="0" allowfullscreen></iframe>
+        <div class="responsibilities-wrapper">
+          <button class="toggle-btn w-full flex items-center justify-between px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors duration-200" onclick="toggleResponsibilities(this)">
+            <span>My Responsibilities</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="responsibilities-content text-left px-4 py-3 bg-gray-800 rounded-lg text-gray-300 text-sm">
+            <ul class="list-disc list-inside space-y-1">
+              <li>Gameplay design</li>
+              <li>Developing the gravitational projectiles mechanic and their interactions with the player and objects</li>
+              <li>Implementing movable platforms</li>
+              <li>Designing and implementing the user interface (UI)</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="mb-12 w-full max-w-5xl">
-      <p class="text-gray-300 max-w-5xl w-full mt-6">
-        For more details about each project - especially my individual contributions and responsibilities, please check the Projects section on my LinkedIn profile.
-        I also invite you to get in touch if you'd like to ask questions or just connect.
-      </p>
-    </section>
+      <!-- Game 3 -->
+      <div class="project-card">
+        <div class="card-text text-center mb-3">
+          <h3 class="text-xl font-bold mb-2">3D Tower Defense in Unity</h3>
+          <p class="text-gray-300">This is the second project which I've worked on with the same team of four as in my diploma project.
+            This game is a simple tower defense game, and the focus of the project is to learn and apply common design and architectural patterns.</p>
+        </div>
+        <iframe class="w-full h-96 rounded-lg shadow-lg mb-3" src="https://www.youtube.com/embed/hF-7jBhkrtc" frameborder="0" allowfullscreen></iframe>
+        <div class="responsibilities-wrapper">
+          <button class="toggle-btn w-full flex items-center justify-between px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors duration-200" onclick="toggleResponsibilities(this)">
+            <span>My Responsibilities</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="responsibilities-content text-left px-4 py-3 bg-gray-800 rounded-lg text-gray-300 text-sm">
+            <ul class="list-disc list-inside space-y-1">
+              <li>Implementing the grid and placement system</li>
+              <li>Level design</li>
+              <li>User interface (UI) and heads-up display (HUD)</li>
+              <li>Creating the tutorial</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    <!-- Contact Section -->
-    <section class="mb-12 w-full max-w-5xl">
-      <h2 class="text-2xl font-semibold mb-4">📬 Contact</h2>
-      <p class="text-gray-300">Email: <a href="mailto:alex.rivera@gamedevmail.com" class="text-blue-400" target="_blank">illya.moskalenko@gmail.com</a></p>
-      <p class="text-gray-300">GitHub: <a href="https://github.com/s28600" class="text-blue-400" target="_blank">github.com/s28600</a></p>
-      <p class="text-gray-300">LinkedIn: <a href="https://www.linkedin.com/in/illya-moskalenko-226699297" class="text-blue-400" target="_blank">linkedin.com/in/illya-moskalenko</a></p>
-    </section>
-  </div>
+      <!-- Game 4 -->
+      <div class="project-card">
+        <div class="card-text text-center mb-3">
+          <h3 class="text-xl font-bold mb-2">Treasure Hunters</h3>
+          <p class="text-gray-300">This was my first project in Unity, with the main goal of learning the engine and gaining experience working on a team project.
+            The team consisted of 4 people, and we worked on the project for 6 weeks.
+            We used free assets from
+            <a href="https://pixelfrog-assets.itch.io/treasure-hunters" target="_blank" class="text-blue-400 underline">PixelFrog's Treasure Hunters pack</a>
+            and implemented all game logic according to a Game Design Document (GDD) template.</p>
+        </div>
+        <iframe class="w-full h-96 rounded-lg shadow-lg mb-3" src="https://www.youtube.com/embed/4TAIjSbqP1U" frameborder="0" allowfullscreen></iframe>
+        <div class="responsibilities-wrapper">
+          <button class="toggle-btn w-full flex items-center justify-between px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors duration-200" onclick="toggleResponsibilities(this)">
+            <span>My Responsibilities</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="responsibilities-content text-left px-4 py-3 bg-gray-800 rounded-lg text-gray-300 text-sm">
+            <ul class="list-disc list-inside space-y-1">
+              <li>Implementing obstacles like moving/collapsing platforms and spikes</li>
+              <li>Level design</li>
+              <li>User interface (UI) and heads-up display (HUD) design and implementation</li>
+              <li>Respawn and checkpoints implementation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-  <footer class="text-center text-gray-500 py-6 text-sm">
-    © 2025 Illya Moskalenko. All rights reserved.
-  </footer>
+    </div>
+  </section>
+
+  <section class="mb-12 w-full max-w-5xl">
+    <p class="text-gray-300 w-full mt-6">
+      For more details about each project - especially my individual contributions and responsibilities, please check the Projects section on my LinkedIn profile.
+      I also invite you to get in touch if you'd like to ask questions or just connect.
+    </p>
+  </section>
+
+  <section class="mb-12 w-full max-w-5xl">
+    <h2 class="text-2xl font-semibold mb-4">📬 Contact</h2>
+    <p class="text-gray-300">Email: <a href="mailto:illya.moskalenko@gmail.com" class="text-blue-400" target="_blank">illya.moskalenko@gmail.com</a></p>
+    <p class="text-gray-300">GitHub: <a href="https://github.com/s28600" class="text-blue-400" target="_blank">github.com/s28600</a></p>
+    <p class="text-gray-300">LinkedIn: <a href="https://www.linkedin.com/in/illya-moskalenko-226699297" class="text-blue-400" target="_blank">linkedin.com/in/illya-moskalenko</a></p>
+  </section>
+
+</div>
+
+<footer class="text-center text-gray-500 py-6 text-sm">
+  © 2025 Illya Moskalenko. All rights reserved.
+</footer>
+
+<script>
+  function toggleResponsibilities(btn) {
+    const content = btn.nextElementSibling;
+    const isOpen = content.classList.contains('open');
+    content.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.querySelector('span').textContent = isOpen ? 'My Responsibilities' : 'Hide Responsibilities';
+  }
+</script>
 </body>
 </html>
